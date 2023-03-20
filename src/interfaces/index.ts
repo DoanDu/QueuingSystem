@@ -28,6 +28,19 @@ export interface IUpdateProps {
     id: string;
     payload: any;
 }
+export interface IDevice {
+    key?: string;
+    _id: string;
+    deviceCode: string;
+    deviceName: string;
+    deviceType?: string;
+    ipAddress?: string;
+    userName?: string;
+    password?: string;
+    serviceUse?: string;
+    statusActive?: string;
+    statusConnect?: string;
+}
 
 export interface IOverview {
     name: string;

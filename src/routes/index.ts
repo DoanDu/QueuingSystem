@@ -15,7 +15,9 @@ const Dashboard = React.lazy(() => import("@/pages/Dashboard"));
 const ForgotPass = React.lazy(() => import("@/pages/ForgotPass"));
 const ResetPass = React.lazy(() => import("@/pages/ResetPass"));
 const NumericalOrder = React.lazy(() => import("@/pages/NumericalOrder"));
-
+const AddDevice = React.lazy(() => import("@/pages/Device/AddDevice"));
+const DetailDevice = React.lazy(() => import("@/pages/Device/DetailDevice"));
+const UpdateDevice = React.lazy(() => import("@/pages/Device/UpdateDevice"));
 
 export const routes = [
     { path: config.routes.home, component: RootPage, layout: null },
@@ -48,5 +50,20 @@ export const routes = [
         layout: MainLayout,
     },
     { path: config.routes.report, component: Report, layout: MainLayout },
+    {
+        path: config.routes.addDevice,
+        component: AddDevice,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.detailDevice,
+        component: DetailDevice,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.updateDevice,
+        component: UpdateDevice,
+        layout: MainLayout,
+    },
 
 ];
