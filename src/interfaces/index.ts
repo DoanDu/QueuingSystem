@@ -65,3 +65,40 @@ export interface IDropdown {
     label: string;
     value: string;
 }
+
+export interface IService {
+    key?: string;
+    _id: string;
+    serviceCode: string;
+    serviceName: string;
+    description?: string;
+    status?: string;
+    autoIncrement?: {
+        checked?: boolean;
+        from?: string;
+        to?: string;
+    };
+    prefix?: {
+        checked?: boolean;
+        value?: string;
+    };
+    surfix?: {
+        checked?: boolean;
+        value?: string;
+    };
+    reset?: boolean;
+}
+export interface INumerical {
+    key?: string;
+    _id?: string;
+    serviceCode?: string;
+    stt: string;
+    clientName: string | undefined;
+    service: string;
+    createdAt: Timestamp;
+    expired: Timestamp;
+    resource: string;
+    status: string;
+    phone?: string;
+    email?: string;
+}

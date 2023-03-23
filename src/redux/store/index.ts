@@ -3,12 +3,15 @@ import { useDispatch } from "react-redux";
 import pathSlice from "../slices/pathSlice";
 import UserSlice from "../slices/UserSlice";
 import deviceSlice from "../slices/deviceSlice";
-
+import serviceSlice from "../slices/serviceSlice";
+import numericalSlice from "../slices/numericalSlice";
 const store = configureStore({
     reducer: {
         path: pathSlice.reducer,
         devices: deviceSlice.reducer,
         users: UserSlice.reducer,
+        services: serviceSlice.reducer,
+        numericalList: numericalSlice.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({ serializableCheck: false }),

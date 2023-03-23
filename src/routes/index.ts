@@ -18,6 +18,15 @@ const NumericalOrder = React.lazy(() => import("@/pages/NumericalOrder"));
 const AddDevice = React.lazy(() => import("@/pages/Device/AddDevice"));
 const DetailDevice = React.lazy(() => import("@/pages/Device/DetailDevice"));
 const UpdateDevice = React.lazy(() => import("@/pages/Device/UpdateDevice"));
+const AddService = React.lazy(() => import("@/pages/Service/AddService"));
+const DetailService = React.lazy(() => import("@/pages/Service/DetailService"));
+const UpdateService = React.lazy(() => import("@/pages/Service/UpdateService"));
+const AddNewNumber = React.lazy(
+    () => import("@/pages/NumericalOrder/AddNewNumber")
+);
+const DetailNumber = React.lazy(
+    () => import("@/pages/NumericalOrder/DetailNumber")
+);
 
 export const routes = [
     { path: config.routes.home, component: RootPage, layout: null },
@@ -63,6 +72,31 @@ export const routes = [
     {
         path: config.routes.updateDevice,
         component: UpdateDevice,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.addService,
+        component: AddService,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.detailService,
+        component: DetailService,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.updateService,
+        component: UpdateService,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.addNewNumber,
+        component: AddNewNumber,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.detailNumber,
+        component: DetailNumber,
         layout: MainLayout,
     },
 
