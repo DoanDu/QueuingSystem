@@ -16,6 +16,7 @@ import {
 } from "@/components/Icons";
 import { useAppDispatch } from "@/redux/store";
 import pathSlice from "@/redux/slices/pathSlice";
+import { pathSelectors } from "@/redux/selectors";
 import { useEffect, useState } from "react";
 import config from "@/configs";
 
@@ -45,7 +46,11 @@ const items: MenuProps["items"] = [
     getItem("Dịch vụ", "/services", <ServiceIcon />),
     getItem("Cấp số", "/numerical-order", <DashboardIcon03 />),
     getItem("Báo cáo", "/report", <ReportIcon />),
-    getItem("Cài đặt hệ thống", "Cài đặt hệ thống", <SettingIcon />, [])
+    getItem("Cài đặt hệ thống", "Cài đặt hệ thống", <SettingIcon />, [
+        getItem("Quản lý vai trò", "/settings/role-management"),
+        getItem("Quản lý tài khoản", "/settings/account-management"),
+        getItem("Nhật ký người dùng", "/settings/user-log"),
+    ]),
 ];
 function MenuSidebar() {
     const { pathname } = useLocation();
@@ -121,6 +126,51 @@ function MenuSidebar() {
                         {
                             name: "Lập báo cáo",
                             link: config.routes.report,
+                        },
+                    ])
+                );
+                break;
+            case "/settings/role-management":
+                setSelected(pathname);
+                dispatch(
+                    pathSlice.actions.setPath([
+                        {
+                            name: "Cài đặt hệ thống",
+                            link: "",
+                        },
+                        {
+                            name: "Quản lý vai trò",
+                            link: config.routes.roleManagement,
+                        },
+                    ])
+                );
+                break;
+            case "/settings/account-management":
+                setSelected(pathname);
+                dispatch(
+                    pathSlice.actions.setPath([
+                        {
+                            name: "Cài đặt hệ thống",
+                            link: "",
+                        },
+                        {
+                            name: "Quản lý tài khoản",
+                            link: config.routes.accountManagement,
+                        },
+                    ])
+                );
+                break;
+            case "/settings/user-log":
+                setSelected(pathname);
+                dispatch(
+                    pathSlice.actions.setPath([
+                        {
+                            name: "Cài đặt hệ thống",
+                            link: "",
+                        },
+                        {
+                            name: "Nhật ký hoạt động",
+                            link: config.routes.userLog,
                         },
                     ])
                 );

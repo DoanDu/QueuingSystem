@@ -5,6 +5,7 @@ import UserSlice from "../slices/UserSlice";
 import deviceSlice from "../slices/deviceSlice";
 import serviceSlice from "../slices/serviceSlice";
 import numericalSlice from "../slices/numericalSlice";
+import roleSlice from "../slices/roleSlice";
 const store = configureStore({
     reducer: {
         path: pathSlice.reducer,
@@ -12,6 +13,7 @@ const store = configureStore({
         users: UserSlice.reducer,
         services: serviceSlice.reducer,
         numericalList: numericalSlice.reducer,
+        role: roleSlice.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({ serializableCheck: false }),

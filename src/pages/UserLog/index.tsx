@@ -43,9 +43,9 @@ const dataSource: DataType[] = [];
 for (let i = 0; i < 20; i++) {
     dataSource.push({
         key: i + 1 + "",
-        userName: "lamtruongpk" + (i + 1) + "@gmail.com",
+        userName: "admin" + (i + 1) + "@gmail.com",
         time: convertTimeToString(new Date(), "DD/MM/YYYY HH:mm:ss"),
-        ip: "192.168.3.1",
+        ip: "192.168.1.1",
         action: "Cập nhật thông tin dịch vụ DV_01",
     });
 }

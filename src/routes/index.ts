@@ -21,6 +21,19 @@ const UpdateDevice = React.lazy(() => import("@/pages/Device/UpdateDevice"));
 const AddService = React.lazy(() => import("@/pages/Service/AddService"));
 const DetailService = React.lazy(() => import("@/pages/Service/DetailService"));
 const UpdateService = React.lazy(() => import("@/pages/Service/UpdateService"));
+const RoleManagement = React.lazy(() => import("@/pages/RoleManagement"));
+const UserLog = React.lazy(() => import("@/pages/UserLog"));
+const AddRole = React.lazy(() => import("@/pages/RoleManagement/AddRole"));
+const AccountManagement = React.lazy(() => import("@/pages/AccountManagement"));
+const UpdateRole = React.lazy(
+    () => import("@/pages/RoleManagement/UpdateRole")
+);
+const AddAccount = React.lazy(
+    () => import("@/pages/AccountManagement/AddAccount")
+);
+const UpdateAccount = React.lazy(
+    () => import("@/pages/AccountManagement/UpdateAccount")
+);
 const AddNewNumber = React.lazy(
     () => import("@/pages/NumericalOrder/AddNewNumber")
 );
@@ -97,6 +110,41 @@ export const routes = [
     {
         path: config.routes.detailNumber,
         component: DetailNumber,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.addRole,
+        component: AddRole,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.updateRole,
+        component: UpdateRole,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.userLog,
+        component: UserLog,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.addAccount,
+        component: AddAccount,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.updateAccount,
+        component: UpdateAccount,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.roleManagement,
+        component: RoleManagement,
+        layout: MainLayout,
+    },
+    {
+        path: config.routes.accountManagement,
+        component: AccountManagement,
         layout: MainLayout,
     },
 
