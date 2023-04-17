@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { INumerical } from "@/interfaces";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
     addDoc,
     collection,
@@ -26,7 +26,7 @@ const numericalSlice = createSlice({
     name: "numerical",
     initialState,
     reducers: {
-        setDetailNumerical: (state, action) => {
+        setDetailNumerical: (state, action: PayloadAction<INumerical>) => {
             state.detailNumerical = action.payload;
         },
     },

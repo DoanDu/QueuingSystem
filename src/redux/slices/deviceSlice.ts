@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { IDevice, IUpdateProps } from "@/interfaces";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
     addDoc,
     collection,
@@ -19,7 +19,7 @@ const deviceSlice = createSlice({
     name: "device",
     initialState,
     reducers: {
-        setDetailDevice: (state, action) => {
+        setDetailDevice: (state, action: PayloadAction<IDevice>) => {
             state.detailDevice = action.payload;
         },
     },

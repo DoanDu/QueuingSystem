@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { IRole, IUpdateProps } from "@/interfaces";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
     addDoc,
     collection,
@@ -19,7 +19,7 @@ const roleSlice = createSlice({
     name: "role",
     initialState,
     reducers: {
-        setInfoUpdate: (state, action) => {
+        setInfoUpdate: (state, action: PayloadAction<IRole>) => {
             state.infoUpdateRole = action.payload;
         },
     },

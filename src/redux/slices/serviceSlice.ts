@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { IService, IUpdateProps } from "@/interfaces";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
     addDoc,
     collection,
@@ -19,7 +19,7 @@ const serviceSlice = createSlice({
     name: "service",
     initialState,
     reducers: {
-        setDetailService: (state, action) => {
+        setDetailService: (state, action: PayloadAction<IService>) => {
             state.detailService = action.payload;
         },
     },

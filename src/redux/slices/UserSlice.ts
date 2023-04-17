@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { IUpdateProps, IUser } from "@/interfaces";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
     collection,
     getDocs,
@@ -20,7 +20,7 @@ const UserSlice = createSlice({
     name: "users",
     initialState,
     reducers: {
-        setUserUpdate: (state, action) => {
+        setUserUpdate: (state, action: PayloadAction<IUser>) => {
             state.userUpdate = { ...action.payload };
         },
     },
